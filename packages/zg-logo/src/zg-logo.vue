@@ -1,5 +1,5 @@
 <template>
-  <div class="zglogo">这是一个zglogo组件</div>
+  <div class="zg-logo">这是一个zglogo组件</div>
 </template>
 <script>
 export default {
@@ -13,4 +13,9 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped></style>
+<style lang="stylus">
+.zg-logo{
+  color red
+  font-size 20px
+}
+</style>

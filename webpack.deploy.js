@@ -7,13 +7,14 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
 const common = require('./webpack.common.js')
+const getEntrys = require('./build/component.js')
 const options = merge(common, {
   mode: 'production',
   devtool: 'cheap-module-source-map',
-  entry: './packages/index.js',
+  entry: getEntrys(path.resolve(__dirname, './packages')),
   output: {
     path: path.resolve(__dirname, './lib'),
-    filename: 'allen-ui.umd.js',
+    filename: '[name].js',
     library: 'allen-ui',
     libraryTarget: 'umd',
     umdNamedDefine: true
@@ -112,8 +113,7 @@ const options = merge(common, {
   plugins: [
     new CleanWebpackPlugin(), //clean dist
     new MiniCssPlugin({
-      filename: '[name].css',
-      chunkFilename: '[name].[contenthash:8].css'
+      filename: 'theme-chalk/[name].css'
     }),
     // Reduces bundles total size
     new webpack.NamedModulesPlugin(),

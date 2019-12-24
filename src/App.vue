@@ -2,6 +2,7 @@
   <div class="allen-ui">
     hello world!
     <zg-logo></zg-logo>
+    <!-- <zg-input></zg-input> -->
   </div>
 </template>
 <script>

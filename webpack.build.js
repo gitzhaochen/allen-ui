@@ -11,7 +11,7 @@ const common = require('./webpack.common.js')
 const options = merge(common, {
   mode: 'production',
   devtool: 'cheap-module-source-map',
-  entry: './src/main.js',
+  entry: path.resolve(__dirname, 'src/main.js'),
   output: {
     filename: '[name].[chunkhash:8].js',
     chunkFilename: '[name].[chunkhash:8].bundle.js',

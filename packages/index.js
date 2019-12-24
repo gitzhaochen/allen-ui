@@ -1,5 +1,6 @@
 import zgLogo from './zg-logo/index.js'
-const components = [zgLogo]
+import zgInput from './zg-input/index.js'
+const components = [zgLogo, zgInput]
 const AllenUi = Object.assign({ installed: false }, components)
 const install = function(Vue, opts) {
   if (AllenUi.installed) return
@@ -18,4 +19,4 @@ AllenUi.install = install
 // 输出default变量，用于全量引入
 export default AllenUi
 // 输出各个组件，用于按需引入
-export { zgLogo }
+export { zgLogo, zgInput }
