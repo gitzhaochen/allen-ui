@@ -6,6 +6,10 @@ export default {
   name: 'ZgLogo',
   data() {
     return {}
+  },
+  mounted() {
+    const abc = Object.assign({}, { x: 1 })
+    console.warn(abc)
   }
 }
 </script>

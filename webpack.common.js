@@ -10,8 +10,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        include: [path.resolve(__dirname, 'src')],
-        exclude: file => /node_modules/.test(file) && !/\.vue\.js/.test(file),
+        exclude: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'lib')],
         use: {
           loader: 'babel-loader'
         }

@@ -14,7 +14,6 @@ const options = merge(common, {
   output: {
     path: path.resolve(__dirname, './lib'),
     filename: 'allen-ui.umd.js',
-    chunkFilename: '[name].[chunkhash:8].bundle.js',
     library: 'allen-ui',
     libraryTarget: 'umd',
     umdNamedDefine: true
@@ -89,8 +88,8 @@ const options = merge(common, {
         extractComments: false, // 移除注释
         terserOptions: {
           compress: {
-            drop_debugger: true,
-            drop_console: true
+            drop_debugger: true
+            // drop_console: true
           }
         }
       }),
@@ -108,33 +107,7 @@ const options = merge(common, {
         },
         canPrint: true
       })
-    ],
-    splitChunks: {
-      chunks: 'all', //initial:入口文件 async:动态导入的模块 all:包括所有
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 7, //动态模块最大可并行请求次数
-      maxInitialRequests: 5, //入口模块最大可并行请求次数
-      automaticNameDelimiter: '.',
-      name: true,
-      cacheGroups: {
-        corejs: {
-          test: /node_modules[\\/]core-js/,
-          priority: 20
-        },
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: 15
-        },
-        commons: {
-          minChunks: 2,
-          priority: 10,
-          reuseExistingChunk: true // 这个配置允许我们使用已经存在的代码块
-        }
-      }
-    },
-    runtimeChunk: 'single'
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(), //clean dist

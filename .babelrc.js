@@ -7,10 +7,7 @@ module.exports = {
         useBuiltIns: 'usage',
         corejs: 3,
         targets: {
-          edge: '17',
-          firefox: '60',
           chrome: '44',
-          safari: '7'
         }
       }
     ]
