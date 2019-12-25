@@ -7,13 +7,13 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
 const common = require('./webpack.common.js')
-const getEntrys = require('./build/component.js')
+const getEntrys = require('./component.js')
 const options = merge(common, {
   mode: 'production',
   devtool: 'cheap-module-source-map',
-  entry: getEntrys(path.resolve(__dirname, './packages')),
+  entry: getEntrys(path.join(process.cwd(), './packages')),
   output: {
-    path: path.resolve(__dirname, './lib'),
+    path: path.join(process.cwd(), './lib'),
     filename: '[name].js',
     library: 'allen-ui',
     libraryTarget: 'umd',
@@ -61,8 +61,8 @@ const options = merge(common, {
             loader: 'style-resources-loader',
             options: {
               patterns: [
-                path.resolve(__dirname, 'src/common/stylus/variable.styl'),
-                path.resolve(__dirname, 'src/common/stylus/mixin.styl')
+                path.join(process.cwd(), 'src/assets/stylus/variable.styl'),
+                path.join(process.cwd(), 'src/assets/stylus/mixin.styl')
               ],
               injector: (source, resources) => {
                 const combineAll = type =>

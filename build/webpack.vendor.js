@@ -17,7 +17,7 @@ module.exports = {
   },
   output: {
     filename: '[name].dll.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(process.cwd(), 'dist'),
     library: '_dll_[name]'
   },
   plugins: [

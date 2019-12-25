@@ -24,13 +24,13 @@ module.exports = {
         useESModules: true // 使用 es modules helpers, 减少 commonJS 语法代码
       }
     ],
-    [
-      'component',
-      {
-        libraryName: 'allen-ui',
-        styleLibrary: { name: 'theme-chalk', base: false }
-      },
-      'allen-ui'
-    ]
+    // [
+    //   'component',
+    //   {
+    //     libraryName: 'allen-ui',
+    //     styleLibrary: { name: 'theme-chalk', base: false }
+    //   },
+    //   'allen-ui'
+    // ]
   ]
 }

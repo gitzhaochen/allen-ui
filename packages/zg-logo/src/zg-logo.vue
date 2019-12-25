@@ -13,9 +13,9 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .zg-logo{
-  color red
+  color $c1
   font-size 20px
 }
 </style>

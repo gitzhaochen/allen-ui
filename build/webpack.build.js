@@ -11,11 +11,11 @@ const common = require('./webpack.common.js')
 const options = merge(common, {
   mode: 'production',
   devtool: 'cheap-module-source-map',
-  entry: path.resolve(__dirname, 'src/main.js'),
+  entry: path.join(process.cwd(), 'src/main.js'),
   output: {
     filename: '[name].[chunkhash:8].js',
     chunkFilename: '[name].[chunkhash:8].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.join(process.cwd(), 'dist')
   },
   module: {
     rules: [
@@ -59,8 +59,8 @@ const options = merge(common, {
             loader: 'style-resources-loader',
             options: {
               patterns: [
-                path.resolve(__dirname, 'src/common/stylus/variable.styl'),
-                path.resolve(__dirname, 'src/common/stylus/mixin.styl')
+                path.join(process.cwd(), 'src/assets/stylus/variable.styl'),
+                path.join(process.cwd(), 'src/assets/stylus/mixin.styl')
               ],
               injector: (source, resources) => {
                 const combineAll = type =>

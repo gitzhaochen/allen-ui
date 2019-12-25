@@ -30,8 +30,8 @@ const options = merge(common, {
             loader: 'style-resources-loader',
             options: {
               patterns: [
-                path.resolve(__dirname, 'src/common/stylus/variable.styl'),
-                path.resolve(__dirname, 'src/common/stylus/mixin.styl')
+                path.join(process.cwd(), 'src/assets/stylus/variable.styl'),
+                path.join(process.cwd(), 'src/assets/stylus/mixin.styl')
               ],
               injector: (source, resources) => {
                 const combineAll = type =>

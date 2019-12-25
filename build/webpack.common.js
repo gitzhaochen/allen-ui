@@ -10,7 +10,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'lib')],
+        exclude: [path.join(process.cwd(), 'node_modules'), path.join(process.cwd(), 'lib')],
         use: {
           loader: 'babel-loader'
         }
@@ -32,8 +32,8 @@ module.exports = {
   plugins: [new VueLoaderPlugin()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '~': path.resolve(__dirname, 'node_modules')
+      '@': path.join(process.cwd(), 'src'),
+      '~': path.join(process.cwd(), 'node_modules')
     },
     extensions: ['*', '.js', '.vue', '.json']
   }
