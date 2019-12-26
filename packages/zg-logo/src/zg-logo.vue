@@ -8,7 +8,7 @@ export default {
     return {}
   },
   mounted() {
-    const abc = Object.assign({}, { x: 1 })
+    const abc = Object.assign({}, { x: 'ZgLogo' })
     console.warn(abc)
   }
 }

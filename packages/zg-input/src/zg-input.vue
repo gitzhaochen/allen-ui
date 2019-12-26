@@ -6,6 +6,10 @@ export default {
   name: 'ZgInput',
   data() {
     return {}
+  },
+  mounted() {
+    const abc = Object.assign({}, { y: 'ZgInput' })
+    console.warn(abc)
   }
 }
 </script>

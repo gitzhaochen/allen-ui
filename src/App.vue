@@ -2,7 +2,8 @@
   <div class="allen-ui">
     hello world!
     <zg-logo></zg-logo>
-    <!-- <zg-input></zg-input> -->
+    <button @click="$notify({ content: '哈哈哈哈哈哈哈' })">点我试试</button>
+    <zg-input></zg-input>
   </div>
 </template>
 <script>
